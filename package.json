@@ -1,0 +1,22 @@
+{
+  "name": "a-private-man",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.4",
+    "semantic-release": "^21.0.7",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "lil-gui": "^0.18.2",
+    "three": "^0.154.0",
+    "vite-plugin-glsl": "^1.1.2"
+  }
+}
