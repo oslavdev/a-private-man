@@ -26,12 +26,6 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
-/**
- * Water
- */
-// Geometry
-const waterGeometry = new THREE.PlaneGeometry(2, 2, 512, 512)
-
 // Colors
 debugObject.depthColor = '#707070'
 debugObject.surfaceColor = '#808080'
@@ -51,8 +45,8 @@ const waterMaterial = new THREE.ShaderMaterial({
         uBigWavesFrequency: { value: new THREE.Vector2(4, 1.5) },
         uBigWavesSpeed: { value: 0.75 },
 
-        uSmallWavesElevation: { value: 0.15 },
-        uSmallWavesFrequency: { value: 3 },
+        uSmallWavesElevation: { value: 0.25 },
+        uSmallWavesFrequency: { value: 34 },
         uSmallWavesSpeed: { value: 0.2 },
         uSmallIterations: { value: 4 },
 
@@ -78,7 +72,7 @@ gui.add(waterMaterial.uniforms.uColorOffset, 'value').min(0).max(1).step(0.001).
 gui.add(waterMaterial.uniforms.uColorMultiplier, 'value').min(0).max(10).step(0.001).name('uColorMultiplier')
 
 // Mesh
-const water = new THREE.Mesh(waterGeometry, waterMaterial)
+const water = new THREE.Mesh(new THREE.PlaneGeometry(2, 2, 512, 512), waterMaterial)
 water.rotation.x = - Math.PI * 0.5
 scene.add(water)
 
